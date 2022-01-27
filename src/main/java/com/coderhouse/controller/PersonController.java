@@ -21,14 +21,16 @@ public class PersonController {
 
     private final PersonService service;
 
-    @Operation(summary = "Método para crear una persona", description = "Permite crear personas en Coderhouse", tags = {"person"})
+    @Operation(summary = "Método para crear una persona",
+            description = "Permite crear personas en Coderhouse",
+            tags = {"person"})
     @ApiResponses(
             value = {
                     @ApiResponse(responseCode = "200", description = "Se creó a la persona"),
-                    @ApiResponse(responseCode = "400", description = "Hay un error en el request", content = @Content),
+                    @ApiResponse(responseCode = "400", description = "Hay un error en el request ", content = @Content),
                     @ApiResponse(responseCode = "500", description = "Ocurrió un error inesperado", content = @Content)
             }
-    ) //http://localhost:8080/openapi/swagger-ui/index.html#/
+    )
     @PostMapping("/person")
     public Person createPerson(@RequestBody Person user) {
         return service.create(user);

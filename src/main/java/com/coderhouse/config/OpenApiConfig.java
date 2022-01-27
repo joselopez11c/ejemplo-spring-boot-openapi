@@ -13,13 +13,13 @@ public class OpenApiConfig {
     public OpenAPI config() {
         return new OpenAPI()
                 .components(new Components())
-//                .paths(RequestHandleS)
                 .info(info());
     }
 
     private Info info() {
         return new Info()
                 .title("Coderhouse API")
+                .version("1.0.0")
                 .description("Este servicio es un ejemplo de usar OpenAPI en Spring Boot");
     }
 
